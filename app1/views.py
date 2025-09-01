@@ -26,3 +26,18 @@ def listdoctors(request):
 def home(request):
     response=render(request,'base.html',context={})
     return response
+
+def doctoredit(request,name):
+    d=Doctor.objects.get(name=name)
+    if request.method=='POST':
+        form=DoctorForm(request.post,instance=d)
+        if form.is_valid():
+            form.save()
+            response=redirect('doctorlist')
+            return response
+    form=DoctorForm(instance=d)
+    
+
+
+
+
