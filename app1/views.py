@@ -9,7 +9,7 @@ def doctoradd(request):
         d=DoctorForm(request.POST)
         if d.is_valid():
             d.save()
-            mesg="doctor details added"
+            mesg="doctor details Added"
     form=DoctorForm()
     
     response=render(request,'adddoctor.html',context={'form':form,'mesg':mesg})
@@ -19,6 +19,7 @@ def doctoradd(request):
 def listdoctors(request):
     qs=Doctor.objects.all()
     response=render(request,"listdoctors_temp.html",context={'qs':qs})
+    return response
 
 
 
