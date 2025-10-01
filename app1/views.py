@@ -39,3 +39,4 @@ def doctoredit(request,name):
     form=DoctorForm(instance=d)
     
 
+
