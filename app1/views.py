@@ -38,5 +38,7 @@ def doctoredit(request,name):
             return response
     form=DoctorForm(instance=d)
     
-
-
+def patientlist(request):
+    qs=Patient.objects.all()
+    res=render(request,'listpatient_temp.html',context={'qs':qs})
+    return res
