@@ -6,8 +6,6 @@ class Doctor(models.Model):
     specialization=models.CharField(max_length=50)
     contact=models.CharField(max_length=15)
 
-
-
     def __str__(self):
         return f"Dr. {self.name} ({self.specialization}) "
 
