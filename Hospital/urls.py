@@ -22,7 +22,10 @@ from app1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('doctoradd/',views.doctoradd, name='doctoradd'),
+    path('doctorlist/',views.listdoctors,name='doctorlist'),
+    path('doctoredit/<name>/',views.doctoredit,name='doctoredit'),
+    path(''),
 
-    
     path("__reload__/", include("django_browser_reload.urls")),
 ]

@@ -89,3 +89,11 @@ def appointment(request):
         desc=request.POST.get('desc')
         Appointment.objects.create(doctor=d,patient=p,date=date,time=time,description=desc)
         msg=""
+    qs1=Doctor.objects.all()
+    qs2=Patient.objects.all()
+    res=render(request,"appointment_temp.html",context={'qs1':qs1, 'qs2':qs2,'msg':msg})
+    return res
+def applist(request):
+    qs=Appointment.objects.all()
+    res=render(request,"applist_temp.html",context={'qs':qs})
+    return res
