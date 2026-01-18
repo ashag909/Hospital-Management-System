@@ -16,17 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from app1 import views
+from app1.views import *
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('doctoradd/',views.doctoradd, name='doctoradd'),
-    path('doctorlist/',views.listdoctors,name='doctorlist'),
-    path('doctoredit/<name>/',views.doctoredit,name='doctoredit'),
-   # path(''),
-
+    path('', home, name='home'),
+    path('doctoradd/',doctoradd, name='doctoradd'),
+    path('doctorlist/',listdoctors,name='doctorlist'),
+    path('doctoredit/<name>/',doctoredit,name='doctoredit'),
+    path('doctordelete/<name>/',doctordelete,name='doctordelete'),
+    path('patientadd/',patientadd,name='patientadd'),
+    path('patientlist/',patientlist,name='patientlist'),
+    path('patientedit/<name>',patientedit,name='patientedit'),
+    path('patientdelete/<name>',patientdelete,name='patientdelete'),
+    path('appointment/',appointment,name='appointment'),
+    path('applist/',applist,name='applist'),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 
